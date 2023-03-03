@@ -4,7 +4,7 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AmazonPage;
-import utilities.ConfigReader;
+import utilities.ConfigurationReader;
 import utilities.Driver;
 
 public class C01_configReaderKullanimi {
@@ -14,15 +14,15 @@ public class C01_configReaderKullanimi {
 
 
         // amazon anasayfaya gidelim
-        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("amazonUrl"));
 
         // Test datasi olarak verilen kelime icin arama yapalim
         AmazonPage amazonPage = new AmazonPage();
-        amazonPage.aramaKutusu.sendKeys(ConfigReader.getProperty("amazonAranacakKelime")+ Keys.ENTER);
+        amazonPage.aramaKutusu.sendKeys(ConfigurationReader.getProperty("amazonAranacakKelime")+ Keys.ENTER);
 
         // arama sonuclarinin arattigimiz test datasini icerdigini test edelim
 
-        String expectedIcerik = ConfigReader.getProperty("amazonAranacakKelime");
+        String expectedIcerik = ConfigurationReader.getProperty("amazonAranacakKelime");
         String actualAramaSonucYazisi= amazonPage.aramaSonucElementi.getText();
 
         Assert.assertTrue(actualAramaSonucYazisi.contains(expectedIcerik));

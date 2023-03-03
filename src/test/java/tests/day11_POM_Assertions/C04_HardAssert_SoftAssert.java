@@ -24,17 +24,22 @@ public class C04_HardAssert_SoftAssert {
             Ancak bir test method'unda birden fazla failed olan assertion varsa
             ilk failed olan assertion'da calismayi durdurup exception firlattigindan
             tum hatayi bir defada gorup, hepsini duzeltme sansimiz olmaz
+
             TestNG bunun icin bir alternatif olusturmus
             Bu alternatifte Assert class'indaki static method'lari kullanmak yerine
+
             SoftAssert class'indan bir obje olusturup
             o obje uzerinden istedigimiz testleri yapiyoruz
-            softassert objesi ile yapilan assertion'lar failed olsa da testimiz calismaya devam eder
-            ancak testlerin sonucunu gormek istedigimizde
+            softassert objesi ile yapilan assertion'lar failed olsa da
+            testimiz calismaya devam eder
+
+            Ancak testlerin sonucunu gormek istedigimizde
             softassert.assertAll() ile tum yaptigi testleri raporlamasini soyleyebiliriz
+
             assertAll() method'unun calistigi satirda
             exception olabilir
          */
-        SoftAssert softAssert = new SoftAssert();
+      SoftAssert softAssert=new SoftAssert();
 
         softAssert.assertTrue(5>8,"true testi failed"); //
 
@@ -46,7 +51,9 @@ public class C04_HardAssert_SoftAssert {
 
 
 
-        softAssert.assertAll();
+        softAssert.assertAll();// Oncesinde testlerimiz failed olsa da devam ediyordu.
+        // Bunu yazinca artik bu satirdan sonra devam etmiyor ve bize rapor verir.
+        // Aciklama olmadigi icin biz yukarida aciklama yazdik
 
     }
 }

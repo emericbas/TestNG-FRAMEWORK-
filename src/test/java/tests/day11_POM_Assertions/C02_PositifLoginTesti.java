@@ -6,10 +6,10 @@ import pages.QdPage;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
-import static utilities.ConfigReader.getProperty;
+import static utilities.ConfigurationReader.getProperty;
 
 public class C02_PositifLoginTesti {
-    @Test
+    @Test(groups="smoke")
     public void PozitifLoginTesti(){
 
         //qd anasayfaya gidin

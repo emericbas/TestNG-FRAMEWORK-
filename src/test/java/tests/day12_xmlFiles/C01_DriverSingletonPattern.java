@@ -19,8 +19,10 @@ public class C01_DriverSingletonPattern {
 
   Singleton Pattern : Bir class'dan obje olusturulmasini engellemek / sinirlamak icin
                                 kullanilan bir yontemdir.
+
                                 Temal fikir obje olusturmak icin kullanilan default constructor
                                 yerine gorunur parametresiz bir constructor olusturup
+
                                 Bu constructor'in access modifier'ini private yapip, kullanilmasini
                                 ENGELLEMEKTIR
          */

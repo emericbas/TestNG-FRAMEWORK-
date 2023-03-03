@@ -4,20 +4,21 @@ import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import pages.AmazonPage;
-import utilities.ConfigReader;
+import utilities.ConfigurationReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class C05_SoftAssert {
-    @Test
+    @Test(groups="smoke")
     public void amazonTesti() {
         /*
             Genel olarak
-            test edin denirse hard assert
-            dogrulayin(verify) denirse soft assert kasdedilir
+           --> test edin denirse hard assert
+           --> dogrulayin(verify) denirse soft assert kasdedilir
          */
 
         // amazon anasayfaya gidip, dogru sayfaya gittigimizi DOGRULAYIN (verify)
-        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("amazonUrl"));
         String expectedIcerik = "amazon";
         String actualUrl = Driver.getDriver().getCurrentUrl();
 
@@ -31,7 +32,7 @@ public class C05_SoftAssert {
         expectedIcerik = "Nutella";
         String actualAramaSonucYazisi = amazonPage.aramaSonucElementi.getText();
         softAssert.assertTrue(actualAramaSonucYazisi.contains(expectedIcerik), "arama sonucu Nutella icermiyor");
-
+        ReusableMethods.bekle(2);
 
         // ilk urune tiklayip, urun isminde Nutella gectigini dogrulayin
         amazonPage.ilkUrun.click();
@@ -40,7 +41,7 @@ public class C05_SoftAssert {
 
         softAssert.assertTrue(actualIlkUrunIsim.contains(expectedIcerik), "ilk urun ismi Nutella icermiyor");
 
-        softAssert.assertAll();
+        softAssert.assertAll();//softAssert testi olusturunca bunu hemen yaz ki unutmayasin
         Driver.closeDriver();
     }
 }

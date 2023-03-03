@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class Driver {
     //// Asagidaki constructor SINGLETON yapiyor, driver class uzerinden obje olusturmasini engelliyor
-    Driver() {
+  private  Driver() {//baska class'dan obje oluturulmasin diye private yaptik.Boylece singleton yaptik.Java'nin bir patenil
 
     }
     /* Daha fazla kontrol imkani ve extends kullanmadan driver'a ulasmak icin
@@ -28,7 +28,7 @@ public class Driver {
 
     public static WebDriver getDriver(){
 
-        String istenenBrowser = ConfigReader.getProperty("browser");
+        String istenenBrowser = ConfigurationReader.getProperty("browser");
 
         if (driver==null) {
 
