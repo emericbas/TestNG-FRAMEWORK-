@@ -51,7 +51,7 @@ List<WebElement>pricesOnTheScreen=Driver.getDriver().findElements(By.className("
          ) {
        fiyatlar.add(each.getText());//[$7.99, $9.99, $15.99, $15.99, $29.99, $49.99]
     }
-   // ArrayList<String> sortList=;
+
 }
 
 {

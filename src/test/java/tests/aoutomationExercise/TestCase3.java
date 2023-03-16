@@ -10,7 +10,7 @@ import utilities.TestBaseRapor;
 public class TestCase3 extends TestBaseRapor {
     @Test
     public void test1() throws InterruptedException {
-        extentTest=extentReports.createTest("Negatif login testi","gecersiz bilgilerle giris yapilabilmali");
+        extentTest = extentReports.createTest("Negatif login testi", "gecersiz bilgilerle giris yapilabilmali");
         AutoTestCase3 autoTestCase = new AutoTestCase3();
         // 1. Launch browser
         // 2. Navigate to url 'http://automationexercise.com'

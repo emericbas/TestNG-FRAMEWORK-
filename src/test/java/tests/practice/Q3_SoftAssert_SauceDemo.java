@@ -1,4 +1,4 @@
-package practice;
+package tests.practice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

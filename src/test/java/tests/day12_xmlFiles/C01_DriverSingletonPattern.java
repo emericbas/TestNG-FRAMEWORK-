@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class C01_DriverSingletonPattern {
     @Test
-    public void test01(){
+    public void test01() {
         /*
         POM webDriver olarak Driver classs'indaki
          getDriver() method'unun kullanilmasi uzerine kurgulanmistir
@@ -28,10 +28,6 @@ public class C01_DriverSingletonPattern {
          */
 
         // Driver objeDriver= new Driver();
-
-
-
-
 
 
     }

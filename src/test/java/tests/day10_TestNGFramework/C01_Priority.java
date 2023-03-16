@@ -19,27 +19,27 @@ public class C01_Priority {
 
      */
 
-    @Test (priority = -20)
-    public void youtubeTesti(){
+    @Test(priority = -20)
+    public void youtubeTesti() {
         // youtube ana sayfaya gidip, youtube gittigimizi test edelim
         Driver.getDriver().get("https://www.youtube.com");
 
         // url youtube iceriyor mu test edelim
         String expectedIcerik = "youtube";
-        String actualUrl= Driver.getDriver().getCurrentUrl();
+        String actualUrl = Driver.getDriver().getCurrentUrl();
 
         Assert.assertTrue(actualUrl.contains(expectedIcerik));
         Driver.closeDriver();
     }
 
     @Test
-    public void amazonTesti(){
+    public void amazonTesti() {
         // Amazon ana sayfaya gidip, amazona gittigimizi test edelim
         Driver.getDriver().get("https://www.amazon.com");
 
         // url amazon iceriyor mu test edelim
         String expectedIcerik = "amazon";
-        String actualUrl= Driver.getDriver().getCurrentUrl();
+        String actualUrl = Driver.getDriver().getCurrentUrl();
 
         Assert.assertTrue(actualUrl.contains(expectedIcerik));
         Driver.closeDriver();
@@ -54,14 +54,13 @@ public class C01_Priority {
 
         // url wisequarter iceriyor mu test edelim
         String expectedIcerik = "wisequarter";
-        String actualUrl= Driver.getDriver().getCurrentUrl();
+        String actualUrl = Driver.getDriver().getCurrentUrl();
 
         Assert.assertTrue(actualUrl.contains(expectedIcerik));
         Driver.closeDriver();
 
 
     }
-
 
 
 }
